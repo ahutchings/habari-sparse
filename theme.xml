@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<theme>
+	<name>Sparse</name>
+	<author>Andrew Hutchings</author>
+	<url>http://getk2.com/</url>
+	<version>1.0</version>
+	<description>A basic theme with a focus on HTML5, WAI-ARIA, microformats, and SEO.</description>
+	<template_engine>rawphpengine</template_engine>
+</theme>

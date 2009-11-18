@@ -11,6 +11,19 @@ class Sparse extends Theme
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/reset.css', 'screen'), 'reset');
     }
 
+    public function theme_header($theme)
+    {
+        $out = parent::theme_header($theme);
+
+        switch (URL::get_matched_rule()->name) {
+        case 'display_entries_by_tag':
+        case 'display_entries':
+            $out .= "<meta name=\"robots\" content=\"noindex,follow\">\n";
+        }
+
+        return $out;
+    }
+
     public function out_title()
     {
         switch (URL::get_matched_rule()->name) {

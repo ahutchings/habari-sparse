@@ -8,6 +8,9 @@
         <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<?php $theme->feed_alternate() ?>">
         <link rel="EditURI" type="application/rsd+xml" title="RSD" href="<?php URL::out('rsd') ?>">
         <?php $theme->header() ?>
+        <!--[if IE]>
+        <link rel="stylesheet" href="<?php echo Site::out_url('theme') ?>/css/ie.css" type="text/css" media="screen, projection" />
+        <![endif]-->
     </head>
     <body>
 		<header role="banner">

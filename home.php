@@ -9,7 +9,6 @@
         </header>
         <?php echo $post->content ?>
 	</article>
-
 <?php endforeach ?>
 
 <?php $theme->display('footer') ?>

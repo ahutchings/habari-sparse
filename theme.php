@@ -10,4 +10,30 @@ class Sparse extends Theme
 
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/reset.css', 'screen'), 'reset');
     }
+
+    public function out_title()
+    {
+        switch (URL::get_matched_rule()->name) {
+        case 'display_home':
+            $title = Options::get('title');
+            if (Options::get('tagline')) {
+                $title .= ' &#8211; '.Options::get('tagline');
+            }
+            break;
+
+        case 'display_entry':
+        case 'display_page':
+            $title = $this->post->title.' &#8211; '.Options::get('title');
+            break;
+
+        case 'display_entries_by_tag':
+            $title = 'Tag Archive for &#8220;'.$this->tag.'&#8221; &#8211; '.Options::get('title');
+            break;
+
+        default:
+            $title = Options::get('title');
+        }
+
+        echo $title;
+    }
 }

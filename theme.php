@@ -9,6 +9,7 @@ class Sparse extends Theme
         Format::apply('tag_and_list', 'post_tags_out');
 
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/screen.css', 'screen, projection'), 'screen');
+        Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/style.css', 'screen, projection'), 'style');
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/print.css', 'print'), 'print');
     }
 

@@ -4,6 +4,7 @@
 			<a href="<?php URL::out('atom_feed_comments') ?>"><?php _e('Atom Comments') ?></a>
 			<a href="#top">Top</a>
     	</footer>
+    	</div><!-- /container -->
     	<?php echo $theme->footer() ?>
     </body>
 </html>

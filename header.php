@@ -13,6 +13,7 @@
         <![endif]-->
     </head>
     <body>
+        <div class="container">
 		<header role="banner">
 			<h1><a href="<?php Site::out_url('habari') ?>" rel="home"><?php Options::out('title') ?></a></h1>
 		</header>

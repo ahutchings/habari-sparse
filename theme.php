@@ -22,6 +22,9 @@ class Sparse extends Theme
         case 'display_entries_by_tag':
         case 'display_entries':
             $out .= "<meta name=\"robots\" content=\"noindex,follow\">\n";
+            break;
+        case 'display_entry':
+            $out .= '<link rel="alternate" type="application/atom+xml" title="'.Options::get('title').' &raquo; '.$this->post->title_out.' Comments Feed" href="'.$this->post->comment_feed_link.'">'."\n";
         }
 
         return $out;

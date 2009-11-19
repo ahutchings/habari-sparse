@@ -5,7 +5,7 @@
         <meta name="generator" content="Habari">
         <title><?php $theme->out_title() ?></title>
         <link rel="edit" type="application/atom+xml" title="<?php Options::out('title') ?>" href="<?php URL::out('atompub_servicedocument') ?>">
-        <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<?php $theme->feed_alternate() ?>">
+        <link rel="alternate" type="application/atom+xml" title="<?php Options::out('title') ?> Atom Feed" href="<?php $theme->feed_alternate() ?>">
         <link rel="EditURI" type="application/rsd+xml" title="RSD" href="<?php URL::out('rsd') ?>">
         <?php $theme->header() ?>
         <!--[if IE]>

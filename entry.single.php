@@ -12,7 +12,6 @@
 <?php if (Session::has_messages()) { Session::messages_out(); } ?>
 
 <div id="comments">
-<a href="<?php echo $post->comment_feed_link ?>"><?php _e('Feed for this Entry') ?></a>
     <?php if ($post->comments->pingbacks->count): ?>
             <div id="pings">
             <h4><?php echo $post->comments->pingbacks->approved->count ?> <?php echo _n('Pingback', 'Pingbacks', $post->comments->pingbacks->count) ?> <?php _e('to') ?> <?php echo $post->title ?></h4>

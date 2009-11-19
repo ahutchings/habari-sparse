@@ -23,7 +23,7 @@
     				<?php if ($request->display_home): ?>
     				Home
     				<?php else: ?>
-    				<a href="<?php Site::out_url('habari') ?>" title="<?php Options::out('title') ?>">Home</a>
+    				<a href="<?php Site::out_url('habari') ?>" title="<?php Options::out('title') ?>" rel="home">Home</a>
     				<?php endif ?>
 				</li>
 				<?php foreach ($pages as $page): ?>

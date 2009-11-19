@@ -95,6 +95,26 @@ article header time {
 	margin-right:10px;
 }
 
+#feedback input[type=text] {
+	width:300px;
+}
+
+#feedback textarea {
+	width:100%;
+}
+
+#feedback fieldset {
+	border:0;
+}
+
+#feedback form dd {
+	margin-left:0;
+}
+
+#feedback fieldset, #feedback fieldset legend {
+	padding:0;
+}
+
 /**************************************/
 /*               FOOTER               */
 /**************************************/

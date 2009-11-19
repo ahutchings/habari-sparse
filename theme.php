@@ -61,5 +61,7 @@ class Sparse extends Theme
         if (!$this->template_engine->assigned('pages')) {
             $this->assign('pages', Posts::get(array('content_type' => 'page', 'status' => Post::status('published'))));
         }
+
+        parent::add_template_vars();
     }
 }

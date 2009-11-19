@@ -1,10 +1,8 @@
-    	<footer role="contentinfo">
-    		&copy; <?php echo date('Y')?> <?php echo Options::out('title') ?>
-			<a href="<?php URL::out('atom_feed', array('index' => '1')) ?>"><?php _e('Atom Entries') ?></a>
-			<a href="<?php URL::out('atom_feed_comments') ?>"><?php _e('Atom Comments') ?></a>
-			<a href="#top">Top</a>
-    	</footer>
+        <footer role="contentinfo">
+			content available under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/" title="Creative Commons Attribution 3.0 United States License">CC BY 3.0</a>
+        	<span class="right"><a href="#top">&uarr; top</a></span>
+        </footer>
     	</div><!-- /container -->
-    	<?php echo $theme->footer() ?>
+        <?php echo $theme->footer() ?>
     </body>
 </html>

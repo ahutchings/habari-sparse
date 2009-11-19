@@ -6,7 +6,8 @@ class Sparse extends Theme
 {
     public function action_init_theme()
     {
-        Format::apply('tag_and_list', 'post_tags_out');
+        Format::apply('tag_and_list', 'post_tags_out', ', ', ', ');
+        Format::apply_with_hook_params('more', 'post_content_out', 'More &rarr;', null, 1);
 
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/screen.css', 'screen, projection'), 'screen');
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/style.css', 'screen, projection'), 'style');
@@ -50,5 +51,12 @@ class Sparse extends Theme
         }
 
         echo $title;
+    }
+
+    public function add_template_vars()
+    {
+        if (!$this->template_engine->assigned('pages')) {
+            $this->assign('pages', Posts::get(array('content_type' => 'page', 'status' => Post::status('published'))));
+        }
     }
 }

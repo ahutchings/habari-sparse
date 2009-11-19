@@ -14,7 +14,26 @@
     </head>
     <body>
         <div class="container">
-		<header role="banner">
+		<header role="banner" id="top">
 			<h1><a href="<?php Site::out_url('habari') ?>" rel="home"><?php Options::out('title') ?></a></h1>
 		</header>
-		<nav role="navigation"></nav>
+		<nav role="navigation">
+			<ul>
+				<li>
+    				<?php if ($request->display_home): ?>
+    				Home
+    				<?php else: ?>
+    				<a href="<?php Site::out_url('habari') ?>" title="<?php Options::out('title') ?>">Home</a>
+    				<?php endif ?>
+				</li>
+				<?php foreach ($pages as $page): ?>
+				<li>
+    				<?php if (isset($post) && $post->id == $page->id): ?>
+    				    <?php echo $page->title ?>
+    				<?php else: ?>
+    					<a href="<?php echo $page->permalink ?>" title="<?php echo $page->title ?>"><?php echo $page->title ?></a>
+    				<?php endif ?>
+				</li>
+				<?php endforeach ?>
+			</ul>
+		</nav>

@@ -1,6 +1,6 @@
 <?php $theme->display('header') ?>
 
-    <article>
+    <article id="post-<?php echo $post->id ?>">
         <?php echo $post->content_out ?>
     </article>
 

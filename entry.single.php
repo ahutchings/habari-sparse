@@ -1,6 +1,6 @@
 <?php $theme->display('header') ?>
 
-    <article>
+    <article id="post-<?php echo $post->id ?>">
         <header>
             <h2><a href="<?php echo $post->permalink ?>" rel="bookmark"><?php echo $post->title ?></a></h2>
             <time datetime="<?php echo $post->pubdate->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{O}') ?>"><?php echo $post->pubdate->text_format('{N}{S} {F} {Y}') ?></time>
@@ -22,7 +22,7 @@
                                 <div class="comment-content">
                                 <?php echo $pingback->content ?>
                                 </div>
-                                <div class="ping-meta"><a href="<?php echo $pingback->url ?>" title=""><?php echo $pingback->name ?></a></div>
+                                <div class="ping-meta"><a href="<?php echo $pingback->url ?>"><?php echo $pingback->name ?></a></div>
                         </li>
                     <?php endforeach ?>
                 </ul>

@@ -37,7 +37,7 @@ a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, a[href$=".pdf"],
 	padding-right:0;	
 }
 
-header h1, article h2 {
+h1, h2, h3, h4, h5, h6 {
     font-family:"DejaVu Serif Condensed",Cambria,"Bitstream Vera",Georgia,"Times New Roman",serif;
 }
 
@@ -45,9 +45,21 @@ html, body {
     font-family:"DejaVu Sans",Calibri,"Bitstream Vera Sans",Verdana,sans-serif;
 }
 
+h2 {
+	font-size:1.5em;
+}
+
+dl, fieldset {
+	margin-top:0;
+}
+
 /**************************************/
 /*              HEADER                */
 /**************************************/
+.container header h1 {
+	margin-bottom:0.3em;
+}
+
 .container header h1 a {
 	color:#000 !important;
 }
@@ -59,8 +71,13 @@ html, body {
 /**************************************/
 /*             NAVIGATION             */
 /**************************************/
+nav {
+	margin-bottom:2.5em;
+}
+
 nav ul {
 	margin-left:0;
+	margin-top:0;
 	padding-left:0;
 }
 
@@ -75,12 +92,16 @@ nav li {
 /*            MAIN CONTENT            */
 /**************************************/
 article {
-	margin-bottom:1.5em;
+	margin-bottom:3.5em;
 }
 
 article header {
 	color:#999;
-	margin-bottom:1.5em;
+	margin-bottom:0.85em;
+}
+
+article header h2 {
+	margin-bottom:0.2em;
 }
 
 article header h2 a {
@@ -100,7 +121,7 @@ article header time {
 }
 
 #feedback textarea {
-	width:100%;
+	width:540px;
 }
 
 #feedback fieldset {
@@ -115,14 +136,40 @@ article header time {
 	padding:0;
 }
 
+#feedback h4 {
+	margin-bottom:1.5em;
+}
+
+#comments {
+	margin-bottom:3em;
+}
+
+#comments article {
+	border-left:1px solid #DDD;
+	padding-left:15px;
+	margin-bottom:2em;
+}
+
+#comments article header {
+	margin-bottom:0.25em;
+}
+
+#comments article header time {
+	float:right;
+}
+
+#comments article header time a {
+	color:#999;
+}
+
 /**************************************/
 /*               FOOTER               */
 /**************************************/
-.container footer {
+.container > footer {
 	border-top:1px solid #CCC;
 	color:#999;
 }
 
-.container footer .right {
+.container > footer .right {
 	float:right;
 }

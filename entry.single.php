@@ -12,6 +12,7 @@
 <?php if (Session::has_messages()) { Session::messages_out(); } ?>
 
 <section id="feedback">
+	<h4>Feedback</h4>
 	<?php if ($post->comments->pingbacks->count): ?>
 	<div id="pings">
 		<?php foreach ($post->comments->pingbacks->approved as $pingback): ?>
@@ -28,46 +29,43 @@
 	<?php if ($post->comments->moderated->count): ?>
 	<div id="comments">
 		<?php foreach ($post->comments->moderated as $comment): ?>
-		<article id="comment-<?php echo $comment->id ?>" class="comment<?php if ($comment->status == Comment::STATUS_UNAPPROVED) { echo " unapproved"; } ?>">
+		<article id="comment-<?php echo $comment->id ?>" class="<?php $theme->comment_class($comment) ?>">
+			<header>
+				<a href="<?php echo $comment->url ?>"><?php echo $comment->name ?></a>
+				<time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{O}') ?>">
+               	<a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out('NS F Y') ?></a>
+               	</time>
+			</header>
 			<div class="content"><?php echo $comment->content_out ?></div>
-            <footer>
-            	#<a href="#comment-<?php echo $comment->id ?>" class="counter" title="<?php _e('Permanent Link to this Comment') ?>"><?php echo $comment->id ?></a> |
-               <span class="author"><?php _e('Comment by') ?> <a href="<?php echo $comment->url ?>"><?php echo $comment->name ?></a></span>
-               <span class="date"> <?php _e('on') ?> <a href="#comment-<?php echo $comment->id ?>" title="<?php _e('Time of this comment') ?>"><?php $comment->date->out('M j, Y h:ia') ?></a></span><?php if ($comment->status == Comment::STATUS_UNAPPROVED): ?><h5><em><?php _e('In moderation') ?></em></h5><?php endif ?>
-			</footer>
 		</article>
 		<?php endforeach ?>
-	<div id="comments">
+	</div>
 	<?php endif ?>
 
         <form action="<?php URL::out('submit_feedback', array('id' => $post->id)) ?>" method="post">
-
         <fieldset>
-            <legend><?php _e('Add to the Discussion') ?></legend>
             <dl>
-            <dt>
-            	<label for="content">Content</label>
-            </dt>
+            <dt></dt>
             <dd>
             	<textarea name="content" id="comment-content" cols="20" rows="10"></textarea>
             </dd>
 
             <dt>
-            	<label for="name"><?php _e('Name:') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
+            	<label for="name"><?php _e('Name') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
             </dt>
             <dd>
             	<input name="name" id="name" value="<?php echo $commenter_name ?>" type="text" >
             </dd>
 
             <dt>
-            	<label for="email"><?php _e('Email:') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
+            	<label for="email"><?php _e('Email') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
             </dt>
             <dd>
             	<input name="email" id="email" value="<?php echo $commenter_email ?>" type="text" >
             </dd>
 
             <dt>
-            	<label for="url"><?php _e('URL:') ?></label>
+            	<label for="url"><?php _e('URL') ?></label>
             </dt>
             <dd>
             	<input name="url" id="url" value="<?php echo $commenter_url ?>" type="text" >

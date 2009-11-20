@@ -70,4 +70,15 @@ class Sparse extends Theme
 
         parent::add_template_vars();
     }
+
+    public function comment_class($comment)
+    {
+    	$classes = array('comment');
+
+    	if ($comment->status == Comment::STATUS_UNAPPROVED) {
+			$classes[] = 'unapproved';
+		}
+
+    	echo implode(' ', $classes);
+    }
 }

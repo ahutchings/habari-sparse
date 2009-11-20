@@ -91,7 +91,7 @@ class Sparse extends Theme
         $pages = Posts::get(array('content_type' => 'page', 'status' => Post::status('published')));
 
         foreach ($pages as $page) {
-            if (isset($post) && $post->id == $page->id) {
+            if (isset($this->post) && $this->post->id == $page->id) {
                 $items[] = $page->title;
             } else {
                 $items[] = "<a href=\"$page->permalink\" title=\"$page->title\">$page->title</a>";

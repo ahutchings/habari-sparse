@@ -1,6 +1,10 @@
 <?php $theme->display('header') ?>
 
-<!-- @todo output archive content here -->
+<?php if (!empty($post->content)): ?>
+<article id="post-<?php echo $post->id ?>">
+    <?php echo $post->content_out ?>
+</article>
+<?php endif ?>
 
 <?php foreach ($entries as $entry): ?>
 <article>

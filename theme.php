@@ -58,10 +58,6 @@ class Sparse extends Theme
 
     public function add_template_vars()
     {
-//        if (!$this->template_engine->assigned('pages')) {
-//            $this->assign('pages', );
-//        }
-
         if ($this->request->display_page && URL::get_matched_rule()->entire_match == 'archive') {
             if (!$this->template_engine->assigned('entries')) {
                 $this->assign('entries', Posts::get(array('content_type' => 'entry', 'status' => Post::status('published'), 'nolimit' => true)));

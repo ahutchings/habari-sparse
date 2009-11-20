@@ -58,9 +58,9 @@ class Sparse extends Theme
 
     public function add_template_vars()
     {
-        if (!$this->template_engine->assigned('pages')) {
-            $this->assign('pages', Posts::get(array('content_type' => 'page', 'status' => Post::status('published'))));
-        }
+//        if (!$this->template_engine->assigned('pages')) {
+//            $this->assign('pages', );
+//        }
 
         if ($this->request->display_page && URL::get_matched_rule()->entire_match == 'archive') {
             if (!$this->template_engine->assigned('entries')) {
@@ -76,9 +76,34 @@ class Sparse extends Theme
     	$classes = array('comment');
 
     	if ($comment->status == Comment::STATUS_UNAPPROVED) {
-			$classes[] = 'unapproved';
-		}
+            $classes[] = 'unapproved';
+        }
 
     	echo implode(' ', $classes);
+    }
+
+    public function navigation()
+    {
+        $items = array();
+
+        if ($this->request->display_home) {
+            $items[] = 'Home';
+        } else {
+            $items[] = sprintf('<a href="%s" title="%s" rel="home">Home</a>', Site::get_url('habari'), Options::get('title'));
+        }
+
+        $pages = Posts::get(array('content_type' => 'page', 'status' => Post::status('published')));
+
+        foreach ($pages as $page) {
+            if (isset($post) && $post->id == $page->id) {
+                $items[] = $page->title;
+            } else {
+                $items[] = "<a href=\"$page->permalink\" title=\"$page->title\">$page->title</a>";
+            }
+        }
+
+        $items = array_map('sprintf', array_fill(0, count($items), '<li>%s</li>'), $items);
+
+        echo implode("\n", $items);
     }
 }

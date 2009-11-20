@@ -67,12 +67,21 @@ class Sparse extends Theme
         parent::add_template_vars();
     }
 
-    public function comment_class($comment)
+    public function comment_class($comment, $post)
     {
     	$classes = array('comment');
 
     	if ($comment->status == Comment::STATUS_UNAPPROVED) {
             $classes[] = 'unapproved';
+        }
+
+        if ($u = User::get($comment->email)) {
+            $classes[] = 'byuser';
+            $classes[] = 'comment-author-'.Utils::slugify($u->displayname);
+        }
+
+        if ($comment->email == $post->author->email) {
+            $classes[] = 'bypostauthor';
         }
 
     	echo implode(' ', $classes);

@@ -29,7 +29,7 @@
 	<?php if ($post->comments->moderated->count): ?>
 	<div id="comments">
 		<?php foreach ($post->comments->moderated as $comment): ?>
-		<article id="comment-<?php echo $comment->id ?>" class="<?php $theme->comment_class($comment) ?>">
+		<article id="comment-<?php echo $comment->id ?>" class="<?php $theme->comment_class($comment, $post) ?>">
 			<header>
 				<a href="<?php echo $comment->url ?>"><?php echo $comment->name ?></a>
 				<time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{O}') ?>">

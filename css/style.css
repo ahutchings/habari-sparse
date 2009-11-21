@@ -162,6 +162,14 @@ article header time {
 	color:#999;
 }
 
+.comment.bypostauthor {
+	border-left-color:#00d30a !important;
+}
+
+.comment.unapproved {
+	border-left-color:#ffDD00 !important;
+}
+
 /**************************************/
 /*               FOOTER               */
 /**************************************/

@@ -116,6 +116,20 @@ article header time {
     margin-right:10px;
 }
 
+.error, .notice, .success {
+    border-width:0 0 2px;
+    padding:0.4em 0.8em;
+}
+
+ul.error, ul.success {
+    margin-left:0;
+    list-style-type:none;
+}
+
+ul.error li, ul.success li {
+    margin-left:0;
+}
+
 #feedback input[type=text] {
     width:300px;
 }

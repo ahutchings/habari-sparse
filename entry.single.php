@@ -3,7 +3,7 @@
     <article id="post-<?php echo $post->id ?>">
         <header>
             <h2><a href="<?php echo $post->permalink ?>" rel="bookmark"><?php echo $post->title ?></a></h2>
-            <time datetime="<?php echo $post->pubdate->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>"><?php echo $post->pubdate->text_format('{N}{S} {F} {Y}') ?></time>
+            <time datetime="<?php echo $post->pubdate->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>"><?php echo $post->pubdate->text_format('{j}{S} {F} {Y}') ?></time>
             <span class="tags">tags: <?php echo $post->tags_out ?></span>
         </header>
         <?php echo $post->content_out ?>
@@ -33,7 +33,7 @@
             <header>
                 <a href="<?php echo $comment->url ?>"><?php echo $comment->name ?></a>
                 <time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{O}') ?>">
-                   <a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out('NS F Y') ?></a>
+                   <a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out('jS F Y') ?></a>
                    </time>
             </header>
             <div class="content"><?php echo $comment->content_out ?></div>

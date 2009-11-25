@@ -67,11 +67,29 @@ class Sparse extends Theme
         parent::add_template_vars();
     }
 
+    public function body_class()
+    {
+        $body_class = array();
+
+        foreach (get_object_vars($this->request) as $key => $value) {
+            if ($value) {
+                $body_class[$key] = $key;
+            }
+        }
+
+        $body_class[] = URL::get_matched_rule()->entire_match;
+
+        $body_class = array_unique(array_merge($body_class, Stack::get_named_stack('body_class')));
+        $body_class = Plugins::filter('body_class', $body_class, $this);
+
+        echo implode(' ', $body_class);
+    }
+
     public function comment_class($comment, $post)
     {
-    	$classes = array('comment');
+        $classes = array('comment');
 
-    	if ($comment->status == Comment::STATUS_UNAPPROVED) {
+        if ($comment->status == Comment::STATUS_UNAPPROVED) {
             $classes[] = 'unapproved';
         }
 
@@ -84,7 +102,7 @@ class Sparse extends Theme
             $classes[] = 'bypostauthor';
         }
 
-    	echo implode(' ', $classes);
+        echo implode(' ', $classes);
     }
 
     public function navigation()

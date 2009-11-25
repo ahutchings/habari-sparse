@@ -34,7 +34,7 @@ a:link, a:visited {
 }
 
 a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], a[href$=".rdf"], a[href^="aim:"] {
-	padding-right:0;	
+    padding-right:0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,138 +46,145 @@ html, body {
 }
 
 h2 {
-	font-size:1.5em;
+    font-size:1.5em;
 }
 
 dl, fieldset {
-	margin-top:0;
+    margin-top:0;
 }
 
 /**************************************/
 /*              HEADER                */
 /**************************************/
 .container header h1 {
-	margin-bottom:0.3em;
+    margin-bottom:0.3em;
 }
 
 .container header h1 a {
-	color:#000 !important;
+    color:#000 !important;
 }
 
 .container header h1 a:hover {
-	color:#FF0000 !important;
+    color:#FF0000 !important;
 }
 
 /**************************************/
 /*             NAVIGATION             */
 /**************************************/
 nav {
-	margin-bottom:2.5em;
+    margin-bottom:2.5em;
 }
 
 nav ul {
-	margin-left:0;
-	margin-top:0;
-	padding-left:0;
+    margin-left:0;
+    margin-top:0;
+    padding-left:0;
 }
 
 nav li {
-	display:inline;
-	margin-left:0;
-	margin-right:0.85em;
-	text-transform:uppercase;
+    display:inline;
+    margin-left:0;
+    margin-right:0.85em;
+    text-transform:uppercase;
 }
 
 /**************************************/
 /*            MAIN CONTENT            */
 /**************************************/
 article {
-	margin-bottom:3.5em;
+    margin-bottom:3.5em;
 }
 
 article header {
-	color:#999;
-	margin-bottom:0.85em;
+    color:#999;
+    margin-bottom:0.85em;
 }
 
 article header h2 {
-	margin-bottom:0.2em;
+    margin-bottom:0.2em;
 }
 
 article header h2 a {
-	color:#000 !important;
+    color:#000 !important;
 }
 
 article header h2 a:hover {
-	color:#FF0000 !important;
+    color:#FF0000 !important;
 }
 
 article header time {
-	margin-right:10px;
+    margin-right:10px;
 }
 
 #feedback input[type=text] {
-	width:300px;
+    width:300px;
 }
 
 #feedback textarea {
-	width:540px;
+    width:540px;
 }
 
 #feedback fieldset {
-	border:0;
+    border:0;
 }
 
 #feedback form dd {
-	margin-left:0;
+    margin-left:0;
 }
 
 #feedback fieldset, #feedback fieldset legend {
-	padding:0;
-}
-
-#feedback h4 {
-	margin-bottom:1.5em;
+    padding:0;
 }
 
 #comments {
-	margin-bottom:3em;
+    margin-bottom:3em;
 }
 
 #comments article {
-	border-left:1px solid #DDD;
-	padding-left:15px;
-	margin-bottom:2em;
+    border-left:1px solid #DDD;
+    padding-left:15px;
+    margin-bottom:2em;
 }
 
 #comments article header {
-	margin-bottom:0.25em;
+    margin-bottom:0.25em;
 }
 
 #comments article header time {
-	float:right;
+    float:right;
 }
 
 #comments article header time a {
-	color:#999;
+    color:#999;
 }
 
 .comment.bypostauthor {
-	border-left-color:#00d30a !important;
+    border-left-color:#00d30a !important;
 }
 
 .comment.unapproved {
-	border-left-color:#ffDD00 !important;
+    border-left-color:#ffDD00 !important;
 }
 
 /**************************************/
 /*               FOOTER               */
 /**************************************/
 .container > footer {
-	border-top:1px solid #CCC;
-	color:#999;
+    border-top:1px solid #CCC;
+    color:#999;
 }
 
 .container > footer .right {
-	float:right;
+    float:right;
+}
+
+/**************************************/
+/*            PAGE-SPECIFIC           */
+/**************************************/
+body.archive article {
+    margin-bottom:1em;
+}
+
+body.archive article:last-of-type, body.archive article[id] {
+    margin-bottom:3.5em;
 }

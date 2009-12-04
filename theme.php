@@ -115,7 +115,7 @@ class Sparse extends Theme
             $items[] = sprintf('<a href="%s" title="%s" rel="home">Home</a>', Site::get_url('habari'), Options::get('title'));
         }
 
-        $pages = Posts::get(array('content_type' => 'page', 'status' => Post::status('published')));
+        $pages = Posts::get(array('content_type' => 'page', 'status' => Post::status('published'), 'nolimit' => 1));
 
         foreach ($pages as $page) {
             if (isset($this->post) && $this->post->id == $page->id) {

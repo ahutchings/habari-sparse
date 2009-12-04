@@ -46,7 +46,7 @@ html, body {
 }
 
 h2 {
-    font-size:1.5em;
+    font-size:1.3em;
 }
 
 dl, fieldset {
@@ -101,7 +101,7 @@ article header {
 }
 
 article header h2 {
-    margin-bottom:0.2em;
+    margin-bottom:0.1em;
 }
 
 article header h2 a {
@@ -195,6 +195,11 @@ ul.error li, ul.success li {
 /**************************************/
 /*            PAGE-SPECIFIC           */
 /**************************************/
+body.archive h2 {
+    font-size:1.2em;
+    margin-bottom:0;
+}
+
 body.archive article {
     margin-bottom:1em;
 }

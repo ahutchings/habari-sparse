@@ -7,7 +7,7 @@ class Sparse extends Theme
     public function action_init_theme()
     {
         Format::apply('tag_and_list', 'post_tags_out', ', ', ', ');
-        Format::apply_with_hook_params('more', 'post_content_out', 'More &rarr;', null, 1);
+        Format::apply_with_hook_params('more', 'post_content_out', 'More &#8250;', null, 1);
 
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/screen.css', 'screen, projection'), 'screen');
         Stack::add('template_stylesheet', array(Site::get_url('theme') . '/css/style.css', 'screen, projection'), 'style');

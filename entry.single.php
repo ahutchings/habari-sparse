@@ -32,7 +32,7 @@
         <article id="comment-<?php echo $comment->id ?>" class="<?php $theme->comment_class($comment, $post) ?>">
             <header>
                 <a href="<?php echo $comment->url ?>"><?php echo $comment->name ?></a>
-                <time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{O}') ?>">
+                <time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>">
                    <a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out('jS F Y') ?></a>
                    </time>
             </header>

@@ -33,10 +33,6 @@ a:link, a:visited {
     color:#FF0000;
 }
 
-a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], a[href$=".rdf"], a[href^="aim:"] {
-    padding-right:0;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family:"DejaVu Serif Condensed",Cambria,"Bitstream Vera",Georgia,"Times New Roman",serif;
 }
@@ -45,7 +41,7 @@ html, body {
     font-family:"DejaVu Sans",Calibri,"Bitstream Vera Sans",Verdana,sans-serif;
 }
 
-h2 {
+h2, h3 {
     font-size:1.3em;
 }
 

@@ -49,6 +49,8 @@ dl, fieldset {
     margin-top:0;
 }
 
+.right { float:right }
+
 /**************************************/
 /*              HEADER                */
 /**************************************/
@@ -176,16 +178,24 @@ ul.error li, ul.success li {
     border-left-color:#ffDD00 !important;
 }
 
+#pagination {
+    text-align:center;
+}
+
+#pagination a {
+    padding:2px 5px;
+}
+
+#pagination a.current-page {
+    color:#000;
+}
+
 /**************************************/
 /*               FOOTER               */
 /**************************************/
 .container > footer {
     border-top:1px solid #CCC;
     color:#999;
-}
-
-.container > footer .right {
-    float:right;
 }
 
 /**************************************/

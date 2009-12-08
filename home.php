@@ -11,4 +11,10 @@
     </article>
 <?php endforeach ?>
 
+<nav id="pagination">
+    <?php $theme->prev_page_link(_t('&#8249; Previous')) ?>
+    <?php $theme->page_selector(null, array('leftSide' => 2, 'rightSide' => 2)) ?>
+    <?php $theme->next_page_link(_t('Next &#8250;')) ?>
+</nav>
+
 <?php $theme->display('footer') ?>

@@ -13,19 +13,6 @@
 
 <section id="feedback">
     <h4>Feedback</h4>
-    <?php if ($post->comments->pingbacks->count): ?>
-    <div id="pings">
-        <?php foreach ($post->comments->pingbacks->approved as $pingback): ?>
-        <article id="ping-<?php echo $pingback->id ?>">
-            <div class="content"><?php echo $pingback->content ?></div>
-            <footer>
-                <a href="<?php echo $pingback->url ?>"><?php echo $pingback->name ?></a>
-            </footer>
-        </article>
-        <?php endforeach ?>
-    </div>
-    <?php endif ?>
-
     <?php if ($post->comments->moderated->count): ?>
     <div id="comments">
         <?php foreach ($post->comments->moderated as $comment): ?>

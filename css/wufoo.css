@@ -1,2 +1,6 @@
+.wufoo { font-family:Baskerville,"Palatino Linotype",Times,"Times New Roman",serif; }
 .wufoo .info { border:0; }
 .wufoo .info h2 { display:none; }
+.wufoo li { padding-left:0; }
+.wufoo label.desc { font-weight:400; }
+.wufoo span.req { color:#000 !important; }

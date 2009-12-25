@@ -2,18 +2,6 @@
 /*               HTML5                */
 /**************************************/
 article, aside, dialog, figure, footer, header,
-hgroup, menu, nav, section,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
-
-article, aside, dialog, figure, footer, header,
 hgroup, nav, section {
     display:block;
 }
@@ -40,10 +28,6 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight:normal;
-}
-
-h2, h3 {
-    font-size:1.3em;
 }
 
 h4 {

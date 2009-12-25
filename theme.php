@@ -4,6 +4,9 @@ define('THEME_CLASS', 'Sparse');
 
 class Sparse extends Theme
 {
+    public static $datetime_html5   = 'Y-m-d\TH:i:sP';
+    public static $datetime_visible = 'F jS, Y';
+
     public function action_init_theme()
     {
         Format::apply('tag_and_list', 'post_tags_out', ', ', ', ');
@@ -68,20 +71,20 @@ class Sparse extends Theme
 
     public function body_class()
     {
-        $body_class = array();
+        $classes = array();
 
         foreach (get_object_vars($this->request) as $key => $value) {
             if ($value) {
-                $body_class[$key] = $key;
+                $classes[$key] = $key;
             }
         }
 
-        $body_class[] = URL::get_matched_rule()->entire_match;
+        $classes[] = URL::get_matched_rule()->entire_match;
 
-        $body_class = array_unique(array_merge($body_class, Stack::get_named_stack('body_class')));
-        $body_class = Plugins::filter('body_class', $body_class, $this);
+        $classes = array_unique(array_merge($classes, Stack::get_named_stack('body_class')));
+        $classes = Plugins::filter('body_class', $classes, $this);
 
-        echo implode(' ', $body_class);
+        echo implode(' ', $classes);
     }
 
     public function comment_class($comment, $post)

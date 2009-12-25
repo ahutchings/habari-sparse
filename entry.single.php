@@ -3,7 +3,7 @@
     <article id="post-<?php echo $post->id ?>">
         <header>
             <h2><a href="<?php echo $post->permalink ?>" rel="bookmark"><?php echo $post->title_out ?></a></h2>
-            <time datetime="<?php echo $post->pubdate->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>"><?php echo $post->pubdate->text_format('{j}{S} {F} {Y}') ?></time>
+            <time datetime="<?php echo $post->pubdate->out(Sparse::$datetime_html5) ?>"><?php echo $post->pubdate->out(Sparse::$datetime_visible) ?></time>
             <?php if ($post->tags): ?><span class="tags">tags: <?php echo $post->tags_out ?></span><?php endif ?>
         </header>
         <?php echo $post->content_out ?>
@@ -19,8 +19,8 @@
         <article id="comment-<?php echo $comment->id ?>" class="<?php $theme->comment_class($comment, $post) ?>">
             <header>
                 <a href="<?php echo $comment->url_out ?>"><?php echo $comment->name_out ?></a>
-                <time datetime="<?php echo $comment->date->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>">
-                   <a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out('jS F Y') ?></a>
+                <time datetime="<?php echo $comment->date->out(Sparse::$datetime_html5) ?>">
+                   <a href="#comment-<?php echo $comment->id ?>"><?php $comment->date->out(Sparse::$datetime_visible) ?></a>
                 </time>
             </header>
             <div class="content"><?php echo $comment->content_out ?></div>
@@ -38,14 +38,14 @@
             </dd>
 
             <dt>
-                <label for="name"><?php _e('Name') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
+                <label for="name"><?php _e('Name') ?><?php if (Options::get('comments_require_id') == 1): ?> <span class="required">*</span><?php endif ?></label>
             </dt>
             <dd>
                 <input name="name" id="name" value="<?php echo $commenter_name ?>" type="text">
             </dd>
 
             <dt>
-                <label for="email"><?php _e('Email') ?> <span class="required"><?php if (Options::get('comments_require_id') == 1) : ?> *<?php endif ?></span></label>
+                <label for="email"><?php _e('Email') ?><?php if (Options::get('comments_require_id') == 1): ?> <span class="required">*</span><?php endif ?></label>
             </dt>
             <dd>
                 <input name="email" id="email" value="<?php echo $commenter_email ?>" type="text">

@@ -10,7 +10,7 @@
 <article>
     <header>
         <h2><a href="<?php echo $entry->permalink ?>" rel="bookmark"><?php echo $entry->title_out ?></a></h2>
-        <time datetime="<?php echo $entry->pubdate->text_format('{Y}-{m}-{d}T{H}:{i}:{s}{P}') ?>"><?php echo $entry->pubdate->text_format('{j}{S} {F} {Y}') ?></time>
+        <time datetime="<?php echo $entry->pubdate->out(Sparse::$datetime_html5) ?>"><?php echo $entry->pubdate->out(Sparse::$datetime_visible) ?></time>
         <?php if ($entry->tags): ?><span class="tags">tags: <?php echo $entry->tags_out ?></span><?php endif ?>
     </header>
 </article>

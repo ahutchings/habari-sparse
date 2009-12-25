@@ -22,6 +22,7 @@ hgroup, nav, section {
 /*              GLOBALS               */
 /**************************************/
 .container {
+    font-size:1.3em;
     width:550px;
 }
 
@@ -33,29 +34,42 @@ a:link, a:visited {
     color:#FF0000;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:"DejaVu Serif Condensed",Cambria,"Bitstream Vera",Georgia,"Times New Roman",serif;
+html, body {
+    font-family:Baskerville,"Palatino Linotype",Times,"Times New Roman",serif;
 }
 
-html, body {
-    font-family:"DejaVu Sans",Calibri,"Bitstream Vera Sans",Verdana,sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-weight:normal;
 }
 
 h2, h3 {
     font-size:1.3em;
 }
 
+h4 {
+    font-style:italic;
+}
+
 dl, fieldset {
     margin-top:0;
 }
 
+label {
+    font-weight:normal;
+    font-style:italic;
+}
+
+.required { font-weight:bold; }
 .right { float:right }
 
 /**************************************/
 /*              HEADER                */
 /**************************************/
 .container header h1 {
+    font-weight:400;
+    letter-spacing:0.1em;
     margin-bottom:0.3em;
+    text-transform:uppercase;
 }
 
 .container header h1 a {
@@ -100,6 +114,9 @@ article header {
 
 article header h2 {
     margin-bottom:0.1em;
+    font-weight:400;
+    font-size:1.5em;
+    font-style:italic;
 }
 
 article header h2 a {
@@ -111,7 +128,20 @@ article header h2 a:hover {
 }
 
 article header time {
+    font-variant:small-caps;
+    letter-spacing:0.2em;
+}
+
+.container > article header time {
     margin-right:10px;
+}
+
+article p {
+    text-align:justify;
+}
+
+article p:first-of-type:first-line {
+    font-variant:small-caps;
 }
 
 .error, .notice, .success {
